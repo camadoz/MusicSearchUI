@@ -1,0 +1,18 @@
+<div class="row justify-content-center" style="margin-top: 50px;" >
+    <mdb-card class="mb-4 col-md-4" *ngFor="let entry of entries" style="min-height: 100px; max-width: 250px; margin-right: 20px;">
+      <mdb-card-body>
+        <mdb-card-title>
+           <h4 style="font-weight: bold;">{{entry.title}}</h4>
+           <h4>{{entry.artist}}</h4>
+        </mdb-card-title>
+        <mdb-card-text>
+              {{entry.category}}
+        </mdb-card-text>
+       </mdb-card-body>
+     <mdb-card-footer>
+     <div>
+        <a class="btn btn-sm btn-primary"  routerLink="/details/{{entry.title}}"><span style="color:powderblue;">Details</span></a>
+      </div>
+     </mdb-card-footer>
+    </mdb-card>
+</div>

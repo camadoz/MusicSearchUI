@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/3c23a9b6-9570-4567-ad35-1026155629d9/resourceGroups/madozportfolio20191003103243ResourceGroup/providers/Microsoft.Web/sites/Ang8aspcore-api",
+    "appService.deploySubpath": "dist\\front-end-app"
+}

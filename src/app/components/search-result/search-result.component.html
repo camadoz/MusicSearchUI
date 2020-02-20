@@ -1,0 +1,38 @@
+<div class="row justify-content-md-left" style="margin-top: 10px;">
+       <div class="col-md-3" >
+          <input class="form-control mr-sm-2" type="search" (input)="searchString=$event.target.value" placeholder="Search by artist, album, or title." aria-label="Search">
+       </div>
+
+       <div class="col-md-2" >
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)="onSearch($event)" >Search</button>
+        </div>
+</div>
+<div class="row mt-5" style="font-size: 1.5rem; background-color: whitesmoke ;" *ngIf="_data && !artist" >
+    <div class="offset-md-2 col-md-3"><span style="font-weight: bold;">Artist:</span> {{_data[2]}}  </div>
+    <div class="col-md-2"><span style="font-weight: bold;">Album:</span> {{_data[1]}}</div>
+    <div class="col-md-2">  <span style="font-weight: bold;">Genre:</span> {{_data[3]}}</div>
+    <div class="col-md-2" *ngIf="track"><span style="font-weight: bold;">Track:</span> {{searchString}}</div>
+</div>
+<div class="row justify-content-center" style="margin-top: 50px;" >
+    <mdb-card *ngIf="artist" class="w-5 mb-4"  style="min-height: 180px; margin-bottom: 50px; margin-right: 20px;">
+      <mdb-card-body *ngIf="_data">
+        <mdb-card-text>
+            <ul *ngIf="artist" class="list-group" style="margin-top: 10px;">
+               <h5>Tracks</h5>
+               <li class="list-group-item"  *ngFor="let tracks of _data[0]">
+                <span class="badge badge-pill badge-primary">{{tracks.order}}</span> -  {{tracks.text}}
+               </li>
+            </ul>
+        </mdb-card-text>
+
+      </mdb-card-body>
+    </mdb-card>
+    <mdb-card class="w-5 mb-4"  style="margin-bottom: 50px; margin-right: 20px;">
+            <mdb-card-body *ngIf="!_data">
+                <mdb-card-title>
+                    <h4 style="font-weight: bold;">No results available.</h4>
+
+                </mdb-card-title>
+            </mdb-card-body>
+    </mdb-card>
+</div>
