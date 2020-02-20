@@ -32,11 +32,11 @@ export class DetailsComponent implements OnInit {
         let badResponse = data;
         let badResponseProps = Object.keys(badResponse);
         let goodResponse = [];
- 
+
         for(var prop of badResponseProps){
           goodResponse.push(badResponse[prop]);
         }
-        
+
         this._data = goodResponse;
         console.log(this._data);
 
@@ -59,16 +59,15 @@ export class DetailsComponent implements OnInit {
           this.album = false;
           this.artist = false;
           this.track=true;
-          console.log("the track");
         }
       }
-      
+
       },
       error => {
         this._errorMsg = error.message;
       }
     );
-    
+
   }
 
 }
